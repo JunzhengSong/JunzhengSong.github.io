@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>我的博客</title>
+  
+  <subtitle>一天进步一点</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://junzhengsong.github.io/"/>
+  <updated>2023-01-19T15:15:37.247Z</updated>
+  <id>https://junzhengsong.github.io/</id>
+  
+  <author>
+    <name>Song Junzheng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://junzhengsong.github.io/2023/01/19/test/"/>
+    <id>https://junzhengsong.github.io/2023/01/19/test/</id>
+    <published>2023-01-19T15:15:37.000Z</published>
+    <updated>2023-01-19T15:15:37.247Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
