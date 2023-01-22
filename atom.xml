@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://junzhengsong.github.io/"/>
-  <updated>2023-01-21T08:45:19.014Z</updated>
+  <updated>2023-01-22T10:53:25.568Z</updated>
   <id>https://junzhengsong.github.io/</id>
   
   <author>
@@ -17,13 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
+    <title></title>
+    <link href="https://junzhengsong.github.io/2023/01/22/%E5%B0%8F%E6%9E%97%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>https://junzhengsong.github.io/2023/01/22/小林网络笔记（一）/</id>
+    <published>2023-01-22T10:37:07.181Z</published>
+    <updated>2023-01-22T10:53:25.568Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="title-小林网络笔记（一）"><a href="#title-小林网络笔记（一）" class="headerlink" title="title:小林网络笔记（一）"></a>title:小林网络笔记（一）</h2><h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h2><p>我们不希望传输层协议处理太多的事情，只需要服务好应用即可，让其作为应用间数据传输的媒介，帮助实现应用到应用的通信，而实际的传输功能就交给下一层，也就是<strong>网络层</strong>（<em>Internet Layer</em>）。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt="img"></p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/12.jpg" alt="img"></p><p>网络层路由：</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E5%B0%81%E8%A3%85.png" alt="img"></p><p>网络接口层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段（segment），HTTP 的传输单位则是消息或报文（message）。但这些名词并没有什么本质的区分，可以统称为数据包。</p><h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;h2 id=&quot;title-小林网络笔记（一）&quot;&gt;&lt;a href=&quot;#title-小林网络笔记（一）&quot; class=&quot;headerlink&quot; title=&quot;title:小林网络笔记（一）&quot;&gt;&lt;/a&gt;title:小林网络笔记（一）&lt;/h2&gt;&lt;h2 id=&quot;TCP-IP模型
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Cookie、Session、token、JWT的区别</title>
     <link href="https://junzhengsong.github.io/2023/01/21/%E7%BD%91%E7%BB%9C%E8%AE%A4%E8%AF%81/"/>
     <id>https://junzhengsong.github.io/2023/01/21/网络认证/</id>
     <published>2023-01-21T08:39:37.000Z</published>
-    <updated>2023-01-21T08:45:19.014Z</updated>
+    <updated>2023-01-21T08:47:30.324Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Cookie、Session、token、JWT的区别"><a href="#Cookie、Session、token、JWT的区别" class="headerlink" title="Cookie、Session、token、JWT的区别"></a>Cookie、Session、token、JWT的区别</h1><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.cn/post/6844904034181070861">傻傻分不清之 Cookie、Session、Token、JWT</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Cookie、Session、token、JWT的区别"><a href="#Cookie、Session、token、JWT的区别" class="headerlink" title="Cookie、Session、token、JWT的区别"></a>Cookie、Session、token、JWT的区别</h1><p>yaml front matter tags: [tag1,tag2,tag3] #[]前面要有空格</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://juejin.cn/post/6844904034181070861">傻傻分不清之 Cookie、Session、Token、JWT</a></p>]]></content>
     
     <summary type="html">
     
