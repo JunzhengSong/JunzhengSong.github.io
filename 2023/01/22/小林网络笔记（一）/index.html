@@ -54,7 +54,7 @@
       </li>
       <li>
         
-    更新 <time datetime="2023-01-22T10:53:25.568Z" itemprop="dateUpdated">2023-01-22</time>
+    更新 <time datetime="2023-01-22T11:24:46.490Z" itemprop="dateUpdated">2023-01-22</time>
 
       </li>
       <li id="busuanzi_container_page_pv">
@@ -67,13 +67,36 @@
       <div class="content">
         
         <hr>
-<h2 id="title-小林网络笔记（一）"><a href="#title-小林网络笔记（一）" class="headerlink" title="title:小林网络笔记（一）"></a>title:小林网络笔记（一）</h2><h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h2><p>我们不希望传输层协议处理太多的事情，只需要服务好应用即可，让其作为应用间数据传输的媒介，帮助实现应用到应用的通信，而实际的传输功能就交给下一层，也就是<strong>网络层</strong>（<em>Internet Layer</em>）。</p>
+<h2 id="title-小林图解网络笔记（基础篇）"><a href="#title-小林图解网络笔记（基础篇）" class="headerlink" title="title:小林图解网络笔记（基础篇）"></a>title:小林图解网络笔记（基础篇）</h2><h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP/IP模型"></a>TCP/IP模型</h2><p>我们不希望传输层协议处理太多的事情，只需要服务好应用即可，让其作为应用间数据传输的媒介，帮助实现应用到应用的通信，而实际的传输功能就交给下一层，也就是<strong>网络层</strong>（<em>Internet Layer</em>）。</p>
 <p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt="img"></p>
 <p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/12.jpg" alt="img"></p>
 <p>网络层路由：</p>
 <p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E5%B0%81%E8%A3%85.png" alt="img"></p>
 <p>网络接口层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段（segment），HTTP 的传输单位则是消息或报文（message）。但这些名词并没有什么本质的区分，可以统称为数据包。</p>
-<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3>
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><blockquote>
+<p>接触的比较多的是加速静态资源的访问</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=内容分发网络&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A1604554133}">内容分发网络</a>（Content Delivery Network，简称CDN）是建立并覆盖在承载网之上，由分布在不同区域的边缘<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=节点服务器&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A1604554133}">节点服务器</a>群组成的<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=分布式网络&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A1604554133}">分布式网络</a>。</p>
+<p>CDN应用广泛，支持多种行业、多种场景内容加速，例如：图片小文件、大文件下载、视音频点播、直播流媒体、全站加速、安全加速。</p>
+<p><img src="https://picx.zhimg.com/80/v2-5ba76e77f05b030b5879177bd336928f_1440w.webp?source=1940ef5c" alt="img"></p>
+<p>借用阿里云官网的例子，来简单介绍CDN的工作原理。</p>
+<p>假设通过CDN加速的域名为<code>www.a.com</code>，接入CDN网络，开始使用加速服务后，当<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=终端用户&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A1604554133}">终端用户</a>（北京）发起HTTP请求时，处理流程如下：</p>
+<ol>
+<li>当终端用户（北京）向<code>www.a.com</code>下的指定资源发起请求时，首先向LDNS（本地DNS）发起<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=域名解析&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A1604554133}">域名解析</a>请求。</li>
+<li>LDNS检查缓存中是否有<code>www.a.com</code>的IP地址记录。如果有，则直接返回给终端用户；如果没有，则向授权DNS查询。</li>
+<li>当授权DNS解析<code>www.a.com</code>时，返回域名CNAME <code>www.a.tbcdn.com</code>对应IP地址。</li>
+<li>域名解析请求发送至阿里云DNS调度系统，并为请求分配最佳节点IP地址。</li>
+<li>LDNS获取DNS返回的解析IP地址。</li>
+<li>用户获取解析IP地址。</li>
+<li>用户向获取的IP地址发起对该资源的访问请求。</li>
+</ol>
+<ul>
+<li>如果该IP地址对应的节点已缓存该资源，则会将数据直接返回给用户，例如，图中步骤7和8，请求结束。</li>
+<li>如果该IP地址对应的节点未缓存该资源，则节点向源站发起对该资源的请求。获取资源后，结合用户自定义配置的缓存策略，将资源缓存至节点，例如，图中的北京节点，并返回给用户，请求结束。</li>
+</ul>
+<p>从这个例子可以了解到：</p>
+<p>（1）CDN的加速资源是跟<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=域名绑定&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A1604554133}">域名绑定</a>的。<br>（2）通过域名访问资源，首先是通过DNS分查找离用户最近的CDN节点（边缘服务器）的IP<br>（3）通过IP访问实际资源时，如果CDN上并没有缓存资源，则会到源站请求资源，并缓存到CDN节点上，这样，用户下一次访问时，该CDN节点就会有对应资源的缓存了。</p>
+
       </div>
         <div class="support-author">
           <p>感谢您的阅读。 🙏
