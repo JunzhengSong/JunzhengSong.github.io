@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author"><title>瑞吉外卖笔记（一） · 我的博客</title><meta name="description" content="一、软件开发整体介绍
+
+
+
+二、瑞吉外卖项目介绍
+
+
+
+
+
+
+
+
+
+三、业务开发1. 后台登陆功能开发需求分析：输入用户名和密码，点击登录按钮，请求最后会发送给服务端的controller， controller调service，service调mapper，最终和数据库交互。（mapper层=da"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/logo@2x.png" style="width:127px;"><h3 title=""><a href="/">我的博客</a></h3></div></div><ul class="social-links"></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a target="_blank" rel="noopener" href="https://www.caicai.me"> CaiCai </a><span>&</span><a target="_blank" rel="noopener" href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">Home</a></li><li><a href="/about">Sobre</a></li><li><a href="/archives">Arquivo</a></li><li><a href="/links">Links</a></li></div><div class="information"><div class="back_btn"><li><a class="fa fa-chevron-left" onclick="window.history.go(-1)"> </a></li></div><div class="avatar"><img></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>瑞吉外卖笔记（一）</a></h3></div><div class="post-content"><h1 id="一、软件开发整体介绍"><a href="#一、软件开发整体介绍" class="headerlink" title="一、软件开发整体介绍"></a>一、软件开发整体介绍</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128105905668.png" alt="image-20230128105905668"></p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128110020287.png" alt="image-20230128110020287"></p>
+<hr>
+<h1 id="二、瑞吉外卖项目介绍"><a href="#二、瑞吉外卖项目介绍" class="headerlink" title="二、瑞吉外卖项目介绍"></a>二、瑞吉外卖项目介绍</h1><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128110247040.png" alt="image-20230128110247040"></p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128111142414.png" alt="image-20230128111142414"></p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128110406800.png" alt="image-20230128110406800"></p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128110602129.png" alt="image-20230128110602129"></p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128110650232.png" alt="image-20230128110650232"></p>
+<hr>
+<h1 id="三、业务开发"><a href="#三、业务开发" class="headerlink" title="三、业务开发"></a>三、业务开发</h1><h2 id="1-后台登陆功能开发"><a href="#1-后台登陆功能开发" class="headerlink" title="1. 后台登陆功能开发"></a>1. 后台登陆功能开发</h2><p>需求分析：输入用户名和密码，点击登录按钮，请求最后会发送给服务端的controller， controller调service，service调mapper，最终和数据库交互。（mapper层=dao层）</p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128113908821.png" alt="image-20230128113908821"></p>
+<p>点击登录会向服务器发送post请求，调用controller层中的/employee/login ，在request payload（Request Payload更准确的说是<strong>http request的payload body</strong>。 一般用在数据通过POST请求或者PUT请求。 ）中放置json格式的用户名密码字符串           </p>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128114324993.png" alt="image-20230128114324993"></p>
+<p>通过前端部分要求传入的代码编写返回格式</p>
+<p>实体包与数据库中的表做对应，根据数据库表编写相应的实体类，实体类属性与表中字段名一致。</p>
+<p>实体类中使用驼峰命名法，表中使用下划线如何对应：在application.yml配置文件中，进行如下配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="comment">#在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射</span></span><br><span class="line">    <span class="attr">map-underscore-to-camel-case:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>设计通用返回结果类，服务器响应的数据最终都会封装成此对象。</p>
+<p><strong>静态资源映射</strong>：配置静态资源映射</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Lombok注解*/</span></span><br><span class="line"><span class="meta">@Data</span>  			<span class="comment">//注在实体类上，提供类的get、set、equals、hashCode、canEqual、toString方法</span></span><br><span class="line"><span class="meta">@Log4j</span>/<span class="meta">@Slf4j</span>	<span class="comment">//注在类上，提供对应的 Logger 对象，变量名为 log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*spring注解*/</span></span><br><span class="line"><span class="meta">@Configuration</span>	<span class="comment">//配置类上要写</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="代码进度"><a href="#代码进度" class="headerlink" title="代码进度"></a>代码进度</h3><ul>
+<li>员工实体类</li>
+<li>员工实体对应的mapper</li>
+<li>对员工实体进行操作的service</li>
+<li>接收员工登录请求的controller</li>
+<li>WebMvcConfig：配置静态资源映射</li>
+<li>设置过滤器检验用户是否已经登录，放行或跳转到登录页面</li>
+</ul>
+<h2 id="2-新增员工"><a href="#2-新增员工" class="headerlink" title="2. 新增员工"></a>2. 新增员工</h2><h3 id="代码进度-1"><a href="#代码进度-1" class="headerlink" title="代码进度"></a>代码进度</h3><ul>
+<li>将新增员工写入controller</li>
+<li>新增员工时可能已经存在了，需要编写全局异常处理器</li>
+</ul>
+<ul>
+<li>在controller中写入分页查询，配置mybatisplus的分页插件</li>
+<li>在WebMvcConfig中配置消息转换，同时使用通用转换类，将java对象和json互相转化</li>
+<li></li>
+</ul>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128171401282.png" alt="image-20230128171401282"></p>
+<h2 id="3-启用、禁用员工账号"><a href="#3-启用、禁用员工账号" class="headerlink" title="3. 启用、禁用员工账号"></a>3. 启用、禁用员工账号</h2><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128220207622.png" alt="image-20230128220207622"></p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128220743063.png" alt="image-20230128220743063"></p>
+<p>在服务端给页面响应json数据时进行处理，将long型数据统一转为string字符串</p>
+<hr>
+<p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128221016256.png" alt="image-20230128221016256"></p>
+<hr>
+<h2 id="4-编辑员工信息"><a href="#4-编辑员工信息" class="headerlink" title="4. 编辑员工信息"></a>4. 编辑员工信息</h2><p><img src="C:\Users\1\AppData\Roaming\Typora\typora-user-images\image-20230128221415207.png" alt="image-20230128221415207"></p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2023-01-28</span><i class="fa fa-tag"></i><a class="tag" href="/tags/SpringBoot/" title="SpringBoot">SpringBoot </a><a class="tag" href="/tags/项目/" title="项目">项目 </a></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" target="_blank" rel="noopener" href="http://twitter.com/home?status=,https://junzhengsong.github.io/2023/01/28/瑞吉外卖笔记（一）/,我的博客,瑞吉外卖笔记（一）,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2023/01/28/%E7%91%9E%E5%90%89%E5%A4%96%E5%8D%96%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" title="瑞吉外卖笔记（二）">Próximo post</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
